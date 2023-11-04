@@ -10,4 +10,14 @@ class DirectController < ApplicationController
 
     render({ :template => "direct_templates/detail"})
   end
-end 
+
+  def direct_filter_y
+    @youngest_director = Director.where.not(dob: nil).order(dob: :desc).first
+    render({ :template => "direct_templates/young"})
+  end
+
+  def direct_filter_o
+    @oldest_director = Director.where.not(dob: nil).order(dob: :asc).first
+    render({ :template => "direct_templates/old"})
+  end
+end
