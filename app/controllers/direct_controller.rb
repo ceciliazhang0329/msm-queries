@@ -1,0 +1,2 @@
+class DirectController < ApplicationController
+end 
